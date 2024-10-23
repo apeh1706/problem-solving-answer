@@ -1,4 +1,4 @@
-The alphabet, from 'a' to 'z', is assigned weights corresponding to their ordinal positions. For instance, 'a' has a weight of 1, 'b' has a weight of 2, and so on, with 'z' having a weight of 26. The weight of a string is calculated by summing the weights of all its characters. Consider the string "gits" > gits = 7 + 9 + 20 + 19 = 55.
+1. The alphabet, from 'a' to 'z', is assigned weights corresponding to their ordinal positions. For instance, 'a' has a weight of 1, 'b' has a weight of 2, and so on, with 'z' having a weight of 26. The weight of a string is calculated by summing the weights of all its characters. Consider the string "gits" > gits = 7 + 9 + 20 + 19 = 55.
 
 Example:
 Input:
