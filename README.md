@@ -1,24 +1,13 @@
-1. The alphabet, from 'a' to 'z', is assigned weights corresponding to their ordinal positions. For instance, 'a' has a weight of 1, 'b' has a weight of 2, and so on, with 'z' having a weight of 26. The weight of a string is calculated by summing the weights of all its characters. Consider the string "gits" > gits = 7 + 9 + 20 + 19 = 55.
+penjelasan untuk pertanyaan kedua
 
-Example:
-Input:
-Given a string "abbcccd" and an array of queries "[1, 3, 9, 8]". The queries are used to determine the status of the numbers in the queries based on the following rules:
-1. If a number in the queries is equal to the weight of a character or substring, return "Yes".
-2. If a number in the queries is different from the weight of a character or substring, return "No".
-a = 1
-b = 2
-bb = 4
-c = 3
-cc = 6
-ccc = 9
-d = 4 
-Output: [Yes, Yes, Yes, No]
-Explanation: 
-1. 1=> Yes, 3 => Yes, 9 => Yes, and 8 => No.
-2. Based on the character and substring weighting of "abbcccd", the status of the queries "[1, 3, 9, 8]" is "[Yes, Yes, Yes, No]".
+### Analisis Kompleksitas
 
-Rule:
-For repeated and consecutive characters, the weighting should be specified for each substring from the first occurrence to the n-th occurrence. Example: bbccc => b, bb, c, cc, ccc.
+#### Kompleksitas Waktu (Time Complexity):
+- Algoritma ini memiliki kompleksitas waktu O(n), di mana `n` adalah panjang string input.
+- Alasan utama adalah karena kita hanya melakukan satu kali iterasi melalui seluruh string. Untuk setiap karakter, kita melakukan operasi dasar seperti `push` dan `pop` ke dalam stack, yang masing-masing memiliki kompleksitas O(1).
+- Oleh karena itu, total waktu yang dibutuhkan untuk memproses seluruh string adalah O(n).
 
-Task: 
-Create a function to solve the Weighted Strings problem!
+#### Kompleksitas Ruang (Space Complexity):
+- Algoritma ini menggunakan stack untuk menyimpan tanda kurung pembuka sampai kita menemukan pasangan tanda kurung penutup yang sesuai.
+- Pada kasus terburuk, stack akan menyimpan semua tanda kurung pembuka, yang berjumlah hingga `n/2` elemen.
+- Oleh karena itu, kompleksitas ruang adalah O(n), di mana `n` adalah panjang string, karena kita perlu ruang untuk menyimpan hingga setengah dari total karakter di stack.
