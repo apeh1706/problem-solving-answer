@@ -1,4 +1,4 @@
-function makePalindrome(s, left, right, k) {
+function makePalindromeMax(s, left, right, k) {
     if (left > right) {
         return s;
     }
@@ -13,9 +13,15 @@ function makePalindrome(s, left, right, k) {
         s = replaceAt(s, left, maxDigit);
         s = replaceAt(s, right, maxDigit);
 
-        return makePalindrome(s, left + 1, right - 1, k - 1);
+        return makePalindromeMax(s, left + 1, right - 1, k - 1);
     } else {
-        return makePalindrome(s, left + 1, right - 1, k);
+        if (k > 0 && s[left] !== '9') {
+            s = replaceAt(s, left, '9');
+            s = replaceAt(s, right, '9');
+            return makePalindromeMax(s, left + 1, right - 1, k - 2);
+        }
+
+        return makePalindromeMax(s, left + 1, right - 1, k);
     }
 }
 
@@ -24,7 +30,8 @@ function replaceAt(s, index, char) {
 }
 
 function highestPalindrome(s, k) {
-    let result = makePalindrome(s, 0, s.length - 1, k);
+    let result = makePalindromeMax(s, 0, s.length - 1, k);
+
     return result;
 }
 
